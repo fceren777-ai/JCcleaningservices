@@ -48,22 +48,18 @@
     }
 
     .logo-wrapper {
-      width: 140px;
-      height: 140px;
-      margin: 0 auto 16px;
-      border-radius: 50%;
-      border: 3px solid var(--gold-primary);
-      padding: 4px;
-      background: #000;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      overflow: hidden;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .logo-wrapper img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
+      object-fit: contain;
     }
 
     .profile h1 {
@@ -267,7 +263,7 @@
       border: 2px solid var(--gold-primary);
       border-radius: 16px;
       width: 100%;
-      max-width: 460px;
+      max-width: 480px;
       max-height: 90vh;
       overflow-y: auto;
       padding: 24px;
@@ -299,29 +295,39 @@
       line-height: 1;
     }
 
-    /* Form Inputs */
+    /* Form Inputs & Sections */
+    .form-subtitle {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--cyan-accent);
+      margin: 16px 0 8px;
+      border-bottom: 1px dashed var(--border-color);
+      padding-bottom: 4px;
+    }
+
     .form-group {
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .form-group label {
       display: block;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-main);
       font-weight: 600;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
       width: 100%;
-      padding: 11px 12px;
+      padding: 9px 11px;
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: 8px;
       color: var(--text-main);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       outline: none;
     }
 
@@ -334,11 +340,30 @@
 
     .form-row {
       display: flex;
-      gap: 10px;
+      gap: 8px;
     }
 
     .form-row .form-group {
       flex: 1;
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .checkbox-item {
+      font-size: 0.82rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .checkbox-item input {
+      width: auto;
     }
 
     .submit-btn {
@@ -351,7 +376,7 @@
       font-weight: 700;
       font-size: 1rem;
       cursor: pointer;
-      margin-top: 10px;
+      margin-top: 16px;
       box-shadow: 0 4px 10px rgba(184, 134, 11, 0.3);
       transition: opacity 0.2s;
     }
@@ -381,14 +406,15 @@
     <!-- Profile Header -->
     <div class="profile">
       <div class="logo-wrapper">
-        <img src="https://via.placeholder.com/150/000000/D4AF37?text=JC+Cleaning" alt="JC Cleaning Services Logo" id="mainLogo">
+        <!-- Reemplaza src con la ruta o URL de tu imagen PNG transparente -->
+        <img src="https://fceren777-ai.github.io/JCcleaningservices/logo.png" alt="JC Cleaning Services Logo" id="mainLogo">
       </div>
       <h1>JC CLEANING SERVICES</h1>
       <div class="slogan">Clean • Shine • Fresh</div>
       <p>A Cleaner Tomorrow | Residential & Commercial Solutions</p>
     </div>
 
-    <!-- Direct Contact Actions (Call & Text Regular SMS) -->
+    <!-- Direct Contact Actions -->
     <div class="links">
       <a href="tel:8188241121" class="btn-link btn-primary-action">
         <i class="fa-solid fa-phone"></i>
@@ -410,7 +436,7 @@
     </div>
 
     <!-- Free Estimate Requests Section -->
-    <div class="link-section-title">Request a Free Estimate</div>
+    <div class="link-section-title">Request a Free Estimated Form</div>
     
     <div class="links">
       <div class="btn-link" onclick="openModal('Residential Cleaning')">
@@ -440,6 +466,12 @@
       <div class="btn-link" onclick="openModal('Post-Construction Cleaning')">
         <i class="fa-solid fa-helmet-safety"></i>
         <span>Post-Construction & Renovation</span>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i>
+      </div>
+
+      <div class="btn-link" onclick="openModal('Airbnb Cleaning')">
+        <i class="fa-solid fa-key"></i>
+        <span>Airbnb Cleaning Checklist</span>
         <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i>
       </div>
     </div>
@@ -511,124 +543,161 @@
 
   </div>
 
-  <!-- ESTIMATE FORM MODAL -->
+  <!-- ESTIMATED FORM MODAL (PDF REPLICA) -->
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal-card">
       <div class="modal-header">
-        <h2 id="modalTitle">Request Estimate</h2>
+        <h2 id="modalTitle">Estimated Form</h2>
         <button class="close-btn" onclick="closeModal()">&times;</button>
       </div>
       
-      <!-- Form sending directly to cleaningmsjc@gmail.com via FormSubmit -->
       <form action="https://formsubmit.co/cleaningmsjc@gmail.com" method="POST" id="estimateForm">
-        <!-- FormSubmit Configurations -->
         <input type="hidden" name="_subject" id="emailSubject" value="New Estimate Request - JC Cleaning Services">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="Package Selected" id="serviceTypeInput">
 
-        <input type="hidden" name="Requested Service" id="serviceTypeInput">
-
+        <!-- CLIENT DETAILS SECTION -->
+        <div class="form-subtitle">Client Details</div>
         <div class="form-group">
           <label for="fullName">Full Name *</label>
-          <input type="text" id="fullName" name="Client Name" required placeholder="John Doe">
+          <input type="text" id="fullName" name="Client Full Name" required placeholder="John Doe">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="Phone Number" required placeholder="(818) 000-0000">
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="Client Email" required placeholder="email@domain.com">
+          </div>
         </div>
 
         <div class="form-group">
-          <label for="phone">Phone Number *</label>
-          <input type="tel" id="phone" name="Phone Number" required placeholder="(818) 000-0000">
+          <label for="address">Service Address *</label>
+          <input type="text" id="address" name="Service Address" required placeholder="Street, City, State, Zip">
         </div>
 
+        <!-- TYPE OF RESIDENCE SECTION -->
+        <div class="form-subtitle">Residence & Property Information</div>
         <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="Client Email" required placeholder="name@example.com">
+          <label for="residenceType">Type of Residence</label>
+          <select id="residenceType" name="Type of Residence">
+            <option value="House">House</option>
+            <option value="Condo">Condo</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Commercial Facility">Commercial Facility</option>
+            <option value="Others">Others</option>
+          </select>
         </div>
 
-        <div class="form-group">
-          <label for="address">Service Address / Location</label>
-          <input type="text" id="address" name="Service Address" placeholder="e.g. Canoga Park, CA">
-        </div>
-
-        <!-- Residential Dynamic Fields -->
-        <div id="residentialFields">
+        <!-- HOUSE INFORMATION SECTION -->
+        <div id="houseInfoFields">
           <div class="form-row">
             <div class="form-group">
               <label for="bedrooms">Bedrooms</label>
-              <select id="bedrooms" name="Bedrooms">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4+">4+</option>
-              </select>
+              <input type="number" id="bedrooms" name="Bedrooms" min="0" value="2">
             </div>
             <div class="form-group">
               <label for="bathrooms">Bathrooms</label>
-              <select id="bathrooms" name="Bathrooms">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4+">4+</option>
-              </select>
+              <input type="number" id="bathrooms" name="Bathrooms" min="0" value="2">
+            </div>
+            <div class="form-group">
+              <label for="diningRooms">Dining Rooms</label>
+              <input type="number" id="diningRooms" name="Dining Rooms" min="0" value="1">
             </div>
           </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="offices">Offices</label>
+              <input type="number" id="offices" name="Offices" min="0" value="0">
+            </div>
+            <div class="form-group">
+              <label for="livingRooms">Living Rooms</label>
+              <input type="number" id="livingRooms" name="Living Rooms" min="0" value="1">
+            </div>
+            <div class="form-group">
+              <label for="sqft">Square Footage</label>
+              <input type="text" id="sqft" name="Square Footage" placeholder="e.g. 1,800">
+            </div>
+          </div>
+
           <div class="form-group">
-            <label for="residenceType">Property Type</label>
-            <select id="residenceType" name="Residence Type">
-              <option value="House">House</option>
-              <option value="Apartment">Apartment</option>
-              <option value="Condo">Condo</option>
-            </select>
+            <label for="flooringType">Flooring Type</label>
+            <input type="text" id="flooringType" name="Flooring Type" placeholder="Hardwood, Tile, Carpet, Vinyl">
           </div>
         </div>
 
-        <!-- Commercial / Post-Construction Dynamic Fields -->
-        <div id="commercialFields" style="display: none;">
-          <div class="form-group">
-            <label for="businessType">Business / Facility Type</label>
-            <input type="text" id="businessType" name="Business Type" placeholder="e.g. Office, Retail, Medical">
-          </div>
-          <div class="form-group">
-            <label for="sqft">Approx. Square Footage (Sq Ft)</label>
-            <input type="text" id="sqft" name="Square Footage" placeholder="e.g. 2,500 sq ft">
+        <!-- ADD ON SERVICES SECTION -->
+        <div id="addOnSection">
+          <div class="form-subtitle">Add On Services</div>
+          <div class="checkbox-grid">
+            <label class="checkbox-item"><input type="checkbox" name="AddOn[]" value="Interior Pantry Clean"> Interior Pantry Clean</label>
+            <label class="checkbox-item"><input type="checkbox" name="AddOn[]" value="Cabinets Grease & Oil Wood"> Cabinets (Grease/Oil)</label>
+            <label class="checkbox-item"><input type="checkbox" name="AddOn[]" value="Interior Fridge Clean"> Interior Fridge Clean</label>
+            <label class="checkbox-item"><input type="checkbox" name="AddOn[]" value="Interior Oven Clean"> Interior Oven Clean</label>
+            <label class="checkbox-item"><input type="checkbox" name="AddOn[]" value="Complete Outside Window Clean"> Complete Outside Window</label>
+            <label class="checkbox-item"><input type="checkbox" name="AddOn[]" value="Blinds"> Blinds Cleaning</label>
+            <label class="checkbox-item"><input type="checkbox" name="AddOn[]" value="Patios/Porches/Garage"> Patios / Porches / Garage</label>
           </div>
         </div>
 
+        <!-- ACCESS INFORMATION SECTION -->
+        <div class="form-subtitle">Access Information</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="gateCode">Gate Code</label>
+            <input type="text" id="gateCode" name="Gate Code" placeholder="Optional">
+          </div>
+          <div class="form-group">
+            <label for="doorCode">Door / Key Code</label>
+            <input type="text" id="doorCode" name="Door Code" placeholder="Optional">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="parkingCode">Parking Info</label>
+            <input type="text" id="parkingCode" name="Parking Code" placeholder="Optional">
+          </div>
+          <div class="form-group">
+            <label for="alarmCode">Alarm Code</label>
+            <input type="text" id="alarmCode" name="Alarm Code" placeholder="Optional">
+          </div>
+        </div>
+
+        <!-- ADDITIONAL REQUIREMENTS -->
+        <div class="form-subtitle">Special Requirements / Notes</div>
         <div class="form-group">
-          <label for="notes">Additional Details / Notes</label>
-          <textarea id="notes" name="Additional Notes" rows="3" placeholder="Specify any special requests or area details..."></textarea>
+          <textarea id="additionalNotes" name="Additional Information" rows="3" placeholder="Are there items/products requiring special attention, or special instructions?"></textarea>
         </div>
 
         <button type="submit" class="submit-btn">
-          <i class="fa-solid fa-paper-plane"></i> Submit Request via Email
+          <i class="fa-solid fa-paper-plane"></i> Submit Estimated Form
         </button>
       </form>
     </div>
   </div>
 
   <script>
-    const pdfLogoUrl = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><rect width='140' height='140' fill='%23000'/><circle cx='70' cy='70' r='60' stroke='%23d4af37' stroke-width='3' fill='none'/><text x='70' y='65' fill='%23d4af37' font-family='Arial' font-size='18' font-weight='bold' text-anchor='middle'>JC</text><text x='70' y='85' fill='%2300a8b5' font-family='Arial' font-size='10' font-weight='bold' text-anchor='middle'>CLEANING</text></svg>";
-    
-    document.getElementById('mainLogo').onerror = function() {
-      this.src = pdfLogoUrl;
-    };
-
     const modalOverlay = document.getElementById('modalOverlay');
     const modalTitle = document.getElementById('modalTitle');
     const serviceTypeInput = document.getElementById('serviceTypeInput');
     const emailSubject = document.getElementById('emailSubject');
-    const residentialFields = document.getElementById('residentialFields');
-    const commercialFields = document.getElementById('commercialFields');
+    const addOnSection = document.getElementById('addOnSection');
+    const houseInfoFields = document.getElementById('houseInfoFields');
 
     function openModal(serviceName) {
       serviceTypeInput.value = serviceName;
-      modalTitle.innerText = 'Estimate: ' + serviceName;
-      emailSubject.value = 'New Estimate Request: ' + serviceName + ' - JC Cleaning Services';
+      modalTitle.innerText = 'ESTIMATED FORM: ' + serviceName.toUpperCase();
+      emailSubject.value = 'New Estimated Form Submitted: ' + serviceName + ' - JC Cleaning Services';
 
       if (serviceName.includes('Commercial') || serviceName.includes('Post-Construction')) {
-        residentialFields.style.display = 'none';
-        commercialFields.style.display = 'block';
+        addOnSection.style.display = 'none';
       } else {
-        residentialFields.style.display = 'block';
-        commercialFields.style.display = 'none';
+        addOnSection.style.display = 'block';
       }
 
       modalOverlay.classList.add('active');
