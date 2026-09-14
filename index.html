@@ -56,7 +56,7 @@
   /* ---------- NAV ---------- */
   header{
     position:sticky; top:0; z-index:500;
-    background:rgba(250,246,238,0.92);
+    background:rgba(250,246,238,0.96);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
@@ -65,10 +65,10 @@
     height:76px;
   }
   .brand{display:flex; align-items:center; gap:12px;}
-  .brand img{width:42px; height:42px; border-radius:50%;}
-  .brand span{font-family:'Poppins', sans-serif; font-weight:600; font-size:1.15rem;}
-  .nav-links{display:flex; gap:32px; align-items:center;}
-  .nav-links a{font-size:0.93rem; font-weight:500; color:var(--ink-soft); transition:color .2s;}
+  .brand img{width:46px; height:46px; border-radius:50%; object-fit:contain;}
+  .brand span{font-family:'Poppins', sans-serif; font-weight:600; font-size:1.15rem; white-space:nowrap;}
+  .nav-links{display:flex; gap:24px; align-items:center;}
+  .nav-links a{font-size:0.93rem; font-weight:500; color:var(--ink-soft); transition:color .2s; white-space:nowrap;}
   .nav-links a:hover{color:var(--teal-deep);}
   .nav-cta{
     display:flex; gap:10px; align-items:center;
@@ -86,7 +86,6 @@
   .btn-outline:hover{background:var(--ink); color:var(--ivory);}
   .btn-ghost-light{border-color:rgba(250,246,238,0.4); color:var(--ivory);}
   .btn-ghost-light:hover{background:rgba(250,246,238,0.12);}
-  .menu-toggle{display:none; background:none; border:none; font-size:1.4rem; color:var(--ink);}
 
   /* ---------- HERO ---------- */
   .hero{
@@ -290,7 +289,7 @@
 
   /* ---------- CTA BAND ---------- */
   .cta-band{background:#0c0b09; color:var(--ivory); padding:80px 0; text-align:center;}
-  .cta-band img{width:70px; height:70px; margin:0 auto 22px; border-radius:50%;}
+  .cta-band img{width:70px; height:70px; margin:0 auto 22px; border-radius:50%; object-fit:contain;}
   .cta-band h2{font-size:clamp(1.8rem,3.4vw,2.5rem); max-width:20ch; margin:0 auto 16px;}
   .cta-band p{color:#a89f8c; max-width:46ch; margin:0 auto 30px; line-height:1.6;}
   .cta-band .hero-actions{justify-content:center;}
@@ -299,7 +298,7 @@
   footer{background:var(--ink-soft); color:#c7bfab; padding:64px 0 26px;}
   .footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(250,246,238,0.1);}
   .footer-brand{display:flex; align-items:center; gap:12px; margin-bottom:14px;}
-  .footer-brand img{width:38px; height:38px; border-radius:50%;}
+  .footer-brand img{width:38px; height:38px; border-radius:50%; object-fit:contain;}
   .footer-brand span{font-family:'Poppins', sans-serif; color:var(--ivory); font-size:1.05rem; font-weight:600;}
   footer h5{color:var(--ivory); font-size:0.9rem; margin-bottom:16px; font-weight:600;}
   footer ul{list-style:none;}
@@ -338,22 +337,22 @@
 
   /* ---------- RESPONSIVE MEJORADO (MOBILE, TABLET & PC) ---------- */
   @media (max-width:960px){
-    .wrap{padding:0 20px;}
+    .wrap{padding:0 16px;}
     .nav-links{display:none;}
     .nav-cta .btn-outline{display:none;}
-    .hero{padding:60px 0 80px;}
-    .hero .wrap{grid-template-columns:1fr; text-align:center; gap:30px;}
+    .hero{padding:40px 0 60px;}
+    .hero .wrap{grid-template-columns:1fr; text-align:center; gap:24px;}
     .eyebrow-line{justify-content:center;}
     .hero h1{max-width:100%; margin:0 auto;}
     .hero p.lede{margin-left:auto; margin-right:auto;}
     .hero-actions{justify-content:center;}
     .hero-trust{justify-content:center;}
-    .bloom-stage{height:260px;}
-    .ring.r1{width:200px; height:200px;}
-    .ring.r2{width:280px; height:280px;}
-    .bloom{height:100px;}
+    .bloom-stage{height:220px;}
+    .ring.r1{width:180px; height:180px;}
+    .ring.r2{width:240px; height:240px;}
+    .bloom{height:90px;}
     
-    .trust-layout{grid-template-columns:1fr; gap:36px;}
+    .trust-layout{grid-template-columns:1fr; gap:32px;}
     .trust-photo{aspect-ratio:16/10;}
 
     .service-grid{grid-template-columns:1fr;}
@@ -361,31 +360,34 @@
     .service-photo-tile{grid-column:span 1;}
 
     .about-layout{grid-template-columns:1fr; gap:24px;}
-    .about-panel{padding:24px; min-height:auto;}
+    .about-panel{padding:20px; min-height:auto;}
 
-    .process-grid{grid-template-columns:1fr 1fr; gap:16px;}
+    .process-grid{grid-template-columns:1fr 1fr; gap:14px;}
 
-    .footer-grid{grid-template-columns:1fr; gap:30px;}
+    .footer-grid{grid-template-columns:1fr; gap:24px;}
     .vine-item{width:100%; left:0 !important; text-align:left !important; padding-left:36px; padding-right:0; padding-bottom:32px;}
     .vine::before{left:12px;}
     .vine-item .vine-node{left:5px !important; right:auto !important;}
   }
 
   @media (max-width:600px){
-    nav.wrap{height:64px;}
-    .section{padding:54px 0;}
-    .trust-section{padding:54px 0;}
-    .hero-actions{flex-direction:column; width:100%;}
+    nav.wrap{height:64px; padding:0 12px;}
+    .brand span{font-size:1rem;}
+    .brand img{width:36px; height:36px;}
+    .btn{padding:8px 14px; font-size:0.8rem;}
+    .section{padding:40px 0;}
+    .trust-section{padding:40px 0;}
+    .hero-actions{flex-direction:column; width:100%; gap:10px;}
     .hero-actions .btn{width:100%;}
     .process-grid{grid-template-columns:1fr;}
     .values-cluster{grid-template-columns:1fr;}
     .form-row{flex-direction:column; gap:0;}
     .checkbox-grid{grid-template-columns:1fr;}
-    .modal-card{padding:20px; border-radius:18px;}
+    .modal-card{padding:18px; border-radius:18px;}
     .about-panel{border-radius:18px;}
-    .review-card{padding:22px;}
+    .review-card{padding:20px;}
     .trust-photo{aspect-ratio:4/3;}
-    .trust-photo .badge{left:10px; bottom:10px; padding:8px 12px; font-size:0.78rem;}
+    .trust-photo .badge{left:10px; bottom:10px; padding:8px 12px; font-size:0.75rem;}
   }
 </style>
 </head>
@@ -394,8 +396,8 @@
 <header>
   <nav class="wrap">
     <a class="brand" href="#top">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwQDAwQEAwQFBAQFBgoHBgYGBg0JCggKDw0QEA8NDw4RExgUERIXEg4PFRwVFxkZGxsbEBQdHx0aHxgaGxr/2wBDAQQFBQYFBgwHBwwaEQ8RGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhr/wAARCAGQAZADASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcFBggJAQMEAv/EAE8QAAEDAwIDBQQHBAcFBgUFAAEAAgMEBREGBxIhMQgTQVFhFCJxgRUyQlJiang metaphysical-symbolism-and-knowledge-transfer/.../4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwQDAwQEAwQFBAQFBgoHBgYGBg0JCggKDw0QEA8NDw4RExgUERIXEg4PFRwVFxkZGxsbEBQdHx0aHxgaGxr/2wBDAQQFBQYFBgwHBwwaEQ8RGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhr/wAARCAGQAZADASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcFBggJAQMEAv/EAE8QAAEDAwIDBQQHBAcFBgUFAAEAAgMEBREGBxIhMQgTQVFhFCJxgRUyQlJiang metaphysical-symbolism-and-knowledge-transfer/.../4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwQDAwQEAwQFBAQFBgoHBgYGBg0JCggKDw0QEA8NDw4RExgUERIXEg4PFRwVFxkZGxsbEBQdHx0aHxgaGxr/2wBDAQQFBQYFBgwHBwwaEQ8RGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhr/wAARCAGQAZADASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcFBggJAQMEAv/EAE8QAAEDAwIDBQQHBAcFBgUFAAEAAgMEBREGBxIhMQgTQVFhFCJxgRUyQlJiang metaphysical-symbolism-and-knowledge-transfer/.../4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwQDAwQEAwQFBAQFBgoHBgYGBg0JCggKDw0QEA8NDw4RExgUERIXEg4PFRwVFxkZGxsbEBQdHx0aHxgaGxr/2wBDAQQFBQYFBgwHBwwaEQ8RGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhr/wAARCAGQAZADASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcFBggJAQMEAv/EAE8QAAEDAwIDBQQHBAcFBgUFAAEAAgMEBREGBxIhMQgTQVFhFCJxgRUyQlJiang metaphysical-symbolism-and-knowledge-transfer/.../4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwQDAwQEAwQFBAQFBgoHBgYGBg0JCggKDw0QEA8NDw4RExgUERIXEg4PFRwVFxkZGxsbEBQdHx0aHxgaGxr/2wBDAQQFBQYFBgwHBwwaEQ8RGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhr/wAARCAGQAZADASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcFBggJAQMEAv/EAE8QAAEDAwIDBQQHBAcFBgUFAAEAAgMEBREGBxIhMQgTQVFhFCJxgRUyQlJiang metaphysical-symbolism-and-knowledge-transfer/.../4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwQDAwQEAwQFBAQFBgoHBgYGBg0JCggKDw0QEA8NDw4RExgUERIXEg4PFRwVFxkZGxsbEBQdHx0aHxgaGxr/2wBDAQQFBQYFBgwHBwwaEQ8RGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhr/wAARCAGQAZADASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcFBggJAQMEAv/EAE8QAAEDAwIDBQQHBAcFBgUFAAEAAgMEBREGBxIhMQgTQVFhFCJxgRUyQlJiang metaphysical-symbolism-and-knowledge-transfer/.../4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwQDAwQEAwQFBAQFBgoHBgYGBg0JCggKDw0QEA8NDw4RExgUERIXEg4PFRwVFxkZGxsbEBQdHx0aHxgaGxr/2wBDAQQFBQYFBgwHBwwaEQ8RGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhr/wAARCAGQAZADASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcFBggJAQMEAv/EAE8QAAEDAwIDBQQHBAcFBgUFAAEAAgMEBREGBxIhMQgTQVFhFCJxgRUyQlJiang metaphysical-symbolism-and-knowledge-transfer/...
-      </div>
+      <img src="https://raw.githubusercontent.com/fceren777-ai/JCcleaningservices/main/logo.png" alt="JC Cleaning Services Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'42\' height=\'42\' viewBox=\'0 0 42 42\'><circle cx=\'21\' cy=\'21\' r=\'20\' fill=\'%23b8912e\'/><text x=\'21\' y=\'26\' fill=\'%23fff\' font-size=\'16\' font-weight=\'bold\' text-anchor=\'middle\'>JC</text></svg>'">
+      <span>JC Cleaning</span>
     </a>
     <div class="nav-links">
       <a href="#services">Services</a>
@@ -599,214 +601,7 @@
 
 <section class="cta-band grain" id="contact">
   <div class="wrap">
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwQDAwQEAwQFBAQFBgoHBgYGBg0JCggKDw0QEA8NDw4RExgUERIXEg4PFRwVFxkZGxsbEBQdHx0aHxgaGxr/2wBDAQQFBQYFBgwHBwwaEQ8RGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhr/wAARCAGQAZADASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcFBggJAQMEAv/EAE8QAAEDAwIDBQQHBAcFBgUFAAEAAgMEBREGBxIhMQgTQVFhFCJxgRUyQlJiang metaphysical-symbolism-and-knowledge-transfer/.../4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwQDAwQEAwQFBAQFBgoHBgYGBg0JCggKDw0QEA8NDw4RExgUERIXEg4PFRwVFxkZGxsbEBQdHx0aHxgaGxr/2wBDAQQFBQYFBgwHBwwaEQ8RGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhr/wAARCAGQAZADASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcFBggJAQMEAv/EAE8QAAEDAwIDBQQHBAcFBgUFAAEAAgMEBREGBxIhMQgTQVFhFCJxgRUyQlJiang metaphysical-symbolism-and-knowledge-transfer/...
-      </div>
-    </a>
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="nav-cta">
-      <a href="tel:8188241121" class="btn btn-outline"><i class="fa-solid fa-phone"></i> (818) 824-1121</a>
-      <button class="btn btn-gold" onclick="openEstimate('General Inquiry')">Free Estimate</button>
-    </div>
-  </nav>
-</header>
-
-<section class="hero grain" id="top">
-  <div class="wrap">
-    <div class="hero-copy">
-      <div class="eyebrow-line"><span class="dot"></span> Serving homes & businesses across the Valley</div>
-      <h1>Clean starts<br>with care.</h1>
-      <p class="lede">Residential and commercial cleaning built around your space — not a one-size checklist. Tell us what matters most, and we'll take it from there.</p>
-      <div class="hero-actions">
-        <button class="btn btn-gold" onclick="openEstimate('General Inquiry')">Get a free estimate</button>
-        <a href="tel:8188241121" class="btn btn-ghost-light"><i class="fa-solid fa-phone"></i> Call now</a>
-      </div>
-      <div class="hero-trust">
-        <span class="stars">★★★★★</span>
-        <span><b>5.0</b> average, straight from clients</span>
-      </div>
-    </div>
-    <div class="bloom-stage" aria-hidden="true">
-      <div class="ring r2"></div>
-      <div class="ring r1"></div>
-      <div class="bloom" style="transform:translateX(-50%) rotate(0deg);"></div>
-      <div class="bloom" style="transform:translateX(-50%) rotate(40deg);"></div>
-      <div class="bloom" style="transform:translateX(-50%) rotate(80deg);"></div>
-      <div class="bloom" style="transform:translateX(-50%) rotate(120deg);"></div>
-      <div class="bloom" style="transform:translateX(-50%) rotate(160deg);"></div>
-      <div class="bloom" style="transform:translateX(-50%) rotate(200deg);"></div>
-      <div class="bloom" style="transform:translateX(-50%) rotate(240deg);"></div>
-      <div class="bloom" style="transform:translateX(-50%) rotate(280deg);"></div>
-      <div class="bloom" style="transform:translateX(-50%) rotate(320deg);"></div>
-      <div class="bloom-core"></div>
-    </div>
-  </div>
-</section>
-<div class="divider">
-  <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C 300,90 1140,-10 1440,40 L1440,0 L0,0 Z" fill="var(--ivory)"></path></svg>
-</div>
-
-<section class="trust-section">
-  <div class="wrap trust-layout">
-    <div class="trust-photo">
-      <img src="https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=1000&q=80&auto=format&fit=crop" alt="JC Cleaning Services team member cleaning a client's kitchen" loading="lazy">
-      <div class="badge"><i class="fa-solid fa-star"></i> Rated 5.0 by local clients</div>
-    </div>
-    <div>
-      <span class="kicker">Why people trust us in their space</span>
-      <h2>Real people, doing the work right</h2>
-      <p style="margin-top:14px; color:var(--text-soft); font-size:1.02rem; line-height:1.65;">Letting someone into your home or office takes trust. Here's what that looks like from our side.</p>
-      <ul class="trust-points">
-        <li><i class="fa-solid fa-shield-halved"></i><span><b>Insured & guaranteed.</b> We carry commercial general liability insurance, and if you're not satisfied, we'll re-clean it or make it right.</span></li>
-        <li><i class="fa-solid fa-user-check"></i><span><b>Trained & background-checked.</b> Every person we send into your space is qualified and vetted first.</span></li>
-        <li><i class="fa-solid fa-lock"></i><span><b>Private by default.</b> Anything we see or learn about your home or business stays confidential.</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">How we can help</span>
-      <h2>Six ways we get it done</h2>
-      <p>From a single deep clean to a standing office contract — pick what fits, and we'll build the estimate around it.</p>
-    </div>
-    <div class="service-grid">
-      <div class="service-card big">
-        <div class="icon-badge"><i class="fa-solid fa-house"></i></div>
-        <h3>Residential Cleaning</h3>
-        <p>Kitchens, bathrooms, bedrooms, and living spaces cleaned to a standard you can feel — on a schedule built around your home.</p>
-        <a class="service-link" onclick="openEstimate('Residential Cleaning')">Get estimate <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-      <div class="service-card big">
-        <div class="icon-badge"><i class="fa-solid fa-building"></i></div>
-        <h3>Commercial Cleaning</h3>
-        <p>Offices, retail, and shared spaces kept sharp for employees and customers, with minimal disruption to your day.</p>
-        <a class="service-link" onclick="openEstimate('Commercial Cleaning')">Get estimate <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-      <div class="service-card small">
-        <div class="icon-badge"><i class="fa-solid fa-sparkles"></i></div>
-        <h3>Deep Cleaning</h3>
-        <p>A top-to-bottom reset — inside appliances, baseboards, and vents included.</p>
-        <a class="service-link" onclick="openEstimate('Deep Cleaning')">Get estimate <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-      <div class="service-card small">
-        <div class="icon-badge"><i class="fa-solid fa-truck-ramp-box"></i></div>
-        <h3>Move-In / Move-Out</h3>
-        <p>The property left spotless for its next chapter, cabinets to baseboards.</p>
-        <a class="service-link" onclick="openEstimate('Move-In / Move-Out Cleaning')">Get estimate <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-      <div class="service-card small">
-        <div class="icon-badge"><i class="fa-solid fa-helmet-safety"></i></div>
-        <h3>Post-Construction</h3>
-        <p>Dust and residue cleared away so the finished space actually shows.</p>
-        <a class="service-link" onclick="openEstimate('Post-Construction Cleaning')">Get estimate <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-      <div class="service-card small">
-        <div class="icon-badge"><i class="fa-solid fa-key"></i></div>
-        <h3>Airbnb Turnover</h3>
-        <p>A repeatable, detailed reset between guests, same checklist every time.</p>
-        <a class="service-link" onclick="openEstimate('Airbnb Cleaning')">Get estimate <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-      <div class="service-photo-tile">
-        <img src="https://images.unsplash.com/photo-1669101602108-fa5ba89507ee?w=1400&q=80&auto=format&fit=crop" alt="Cleaner mopping a commercial hallway floor" loading="lazy">
-        <div class="overlay">
-          <h3>Same checklist, every visit</h3>
-          <p>Whatever the job, we follow the same detailed standard — so the result never depends on who shows up.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section vine-section grain">
-  <div class="wrap">
-    <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
-      <span class="kicker">What guides the work</span>
-      <h2>Eight things we hold ourselves to</h2>
-    </div>
-    <div class="vine">
-      <div class="vine-item"><div class="vine-node"></div><h4>Quality</h4><p>Not just finishing the job — leaving the space looking clean, fresh, and polished.</p></div>
-      <div class="vine-item"><div class="vine-node"></div><h4>Reliability</h4><p>We arrive prepared and respect the appointment you scheduled, every time.</p></div>
-      <div class="vine-item"><div class="vine-node"></div><h4>Trust & Integrity</h4><p>Honesty, responsibility, and discretion in every home and business we enter.</p></div>
-      <div class="vine-item"><div class="vine-node"></div><h4>Attention to Detail</h4><p>The overlooked spots get the same care as the ones you see every day.</p></div>
-      <div class="vine-item"><div class="vine-node"></div><h4>Respect</h4><p>Every property is treated with the care we'd want in our own home.</p></div>
-      <div class="vine-item"><div class="vine-node"></div><h4>Consistency</h4><p>The same standard from the first appointment through every visit after.</p></div>
-      <div class="vine-item"><div class="vine-node"></div><h4>Customer Satisfaction</h4><p>We listen, we adjust, and we look for ways to do it better.</p></div>
-      <div class="vine-item"><div class="vine-node"></div><h4>Care</h4><p>Cleaning is a service that makes everyday life easier — we treat it that way.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section about-section" id="about">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">Get to know us</span>
-      <h2>Why clients keep calling us back</h2>
-    </div>
-    <div class="about-layout">
-      <div class="petal-tabs">
-        <button class="petal-tab active" data-tab="company" onclick="switchTab('company')">Our Company <i class="fa-solid fa-chevron-right"></i></button>
-        <button class="petal-tab" data-tab="mission" onclick="switchTab('mission')">Our Mission <i class="fa-solid fa-chevron-right"></i></button>
-        <button class="petal-tab" data-tab="commitment" onclick="switchTab('commitment')">Our Commitment <i class="fa-solid fa-chevron-right"></i></button>
-        <button class="petal-tab" data-tab="values" onclick="switchTab('values')">Core Values <i class="fa-solid fa-chevron-right"></i></button>
-      </div>
-      <div class="about-panel" id="aboutPanel">
-        <!-- filled by JS -->
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="process-section grain">
-  <div class="wrap section">
-    <div class="section-head" style="color:var(--ivory);">
-      <span class="kicker" style="color:var(--gold-bright);">Getting started</span>
-      <h2 style="color:var(--ivory);">Four steps, start to finish</h2>
-    </div>
-    <div class="process-grid">
-      <div class="process-step"><span class="num">1</span><h4>Tell us about your space</h4><p>A two-minute form — property type, size, and what you need.</p></div>
-      <div class="process-step"><span class="num">2</span><h4>Get your estimate</h4><p>A clear price back, no surprises tacked on later.</p></div>
-      <div class="process-step"><span class="num">3</span><h4>We show up and clean</h4><p>On time, with the checklist for the service you booked.</p></div>
-      <div class="process-step"><span class="num">4</span><h4>Enjoy the result</h4><p>Book it once, or set it on repeat — your call.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section reviews-section" id="reviews">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">From the people we clean for</span>
-      <h2 style="color:var(--ivory);">What clients are saying</h2>
-    </div>
-    <div class="carousel" id="reviewCarousel">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="review-card"><span class="quote-mark">"</span><p>Amazing job! My house has never looked this clean. The team is professional, reliable, and pays attention to every detail.</p><div class="review-foot"><b>Sarah M.</b><span class="stars">★★★★★</span></div></div>
-        <div class="review-card"><span class="quote-mark">"</span><p>I've been using JC Cleaning Services for months and I'm always impressed. Consistent, trustworthy, and they go above and beyond.</p><div class="review-foot"><b>Jessica R.</b><span class="stars">★★★★★</span></div></div>
-        <div class="review-card"><span class="quote-mark">"</span><p>Excellent service from start to finish. Communication is great and the quality of their work is outstanding.</p><div class="review-foot"><b>Mark T.</b><span class="stars">★★★★★</span></div></div>
-        <div class="review-card"><span class="quote-mark">"</span><p>Very professional and detailed. They made our move-out cleaning so easy. The place looked spotless!</p><div class="review-foot"><b>Laura G.</b><span class="stars">★★★★★</span></div></div>
-        <div class="review-card"><span class="quote-mark">"</span><p>JC Cleaning Services did a fantastic job on our office. Everything was clean, organized, and fresh.</p><div class="review-foot"><b>Carlos D.</b><span class="stars">★★★★★</span></div></div>
-        <div class="review-card"><span class="quote-mark">"</span><p>Reliable, friendly, and amazing results! They always leave my home sparkling clean. I trust them completely.</p><div class="review-foot"><b>Ana P.</b><span class="stars">★★★★★</span></div></div>
-      </div>
-      <div class="carousel-controls">
-        <button class="carousel-arrow" onclick="moveCarousel(-1)" aria-label="Previous review"><i class="fa-solid fa-chevron-left"></i></button>
-        <div class="carousel-dots" id="carouselDots"></div>
-        <button class="carousel-arrow" onclick="moveCarousel(1)" aria-label="Next review"><i class="fa-solid fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-band grain" id="contact">
-  <div class="wrap">
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwQDAwQEAwQFBAQFBgoHBgYGBg0JCggKDw0QEA8NDw4RExgUERIXEg4PFRwVFxkZGxsbEBQdHx0aHxgaGxr/2wBDAQQFBQYFBgwHBwwaEQ8RGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhr/wAARCAGQAZADASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcFBggJAQMEAv/EAE8QAAEDAwIDBQQHBAcFBgUFAAEAAgMEBREGBxIhMQgTQVFhFCJxgRUyQlJiang metaphysical-symbolism-and-knowledge-transfer/...
-      </div>
-    </a>
+    <img src="https://raw.githubusercontent.com/fceren777-ai/JCcleaningservices/main/logo.png" alt="JC Cleaning Services Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'70\' height=\'70\' viewBox=\'0 0 70 70\'><circle cx=\'35\' cy=\'35\' r=\'34\' fill=\'%23b8912e\'/><text x=\'35\' y=\'43\' fill=\'%23fff\' font-size=\'26\' font-weight=\'bold\' text-anchor=\'middle\'>JC</text></svg>'">
     <h2>Ready for a cleaner space?</h2>
     <p>Tell us about your home or business and we'll send back a clear, no-surprise estimate.</p>
     <div class="hero-actions">
@@ -822,7 +617,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwQDAwQEAwQFBAQFBgoHBgYGBg0JCggKDw0QEA8NDw4RExgUERIXEg4PFRwVFxkZGxsbEBQdHx0aHxgaGxr/2wBDAQQFBQYFBgwHBwwaEQ8RGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhr/wAARCAGQAZADASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcFBggJAQMEAv/EAE8QAAEDAwIDBQQHBAcFBgUFAAEAAgMEBREGBxIhMQgTQVFhFCJxgRUyQlJiang metaphysical-symbolism-and-knowledge-transfer/...
+          <img src="https://raw.githubusercontent.com/fceren777-ai/JCcleaningservices/main/logo.png" alt="JC Cleaning Services Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'38\' height=\'38\' viewBox=\'0 0 38 38\'><circle cx=\'19\' cy=\'19\' r=\'18\' fill=\'%23b8912e\'/><text x=\'19\' y=\'24\' fill=\'%23fff\' font-size=\'14\' font-weight=\'bold\' text-anchor=\'middle\'>JC</text></svg>'">
           <span>JC Cleaning Services</span>
         </div>
         <p style="max-width:32ch; font-size:0.92rem; line-height:1.6;">Clean · Shine · Fresh. Residential and commercial cleaning, built around your space.</p>
