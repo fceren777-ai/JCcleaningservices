@@ -381,12 +381,11 @@
     <!-- Profile Header -->
     <div class="profile">
       <div class="logo-wrapper">
-        <!-- Logo extraído directamente del PDF oficial -->
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczO01K7TfJ3O_14u4L9BwXJ4Y5eQ90M3u5E1v5D5C5B5A5_example_logo.png" alt="JC Cleaning Services Logo" id="mainLogo">
+        <img src="https://via.placeholder.com/150/000000/D4AF37?text=JC+Cleaning" alt="JC Cleaning Services Logo" id="mainLogo">
       </div>
       <h1>JC CLEANING SERVICES</h1>
       <div class="slogan">Clean • Shine • Fresh</div>
-      <p>A Cleaner Tomorrow | Residential & Commercial</p>
+      <p>A Cleaner Tomorrow | Residential & Commercial Solutions</p>
     </div>
 
     <!-- Direct Contact Actions (Call & Text Regular SMS) -->
@@ -606,7 +605,6 @@
   </div>
 
   <script>
-    // Fallback URL for the original logo from PDF Page 1
     const pdfLogoUrl = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><rect width='140' height='140' fill='%23000'/><circle cx='70' cy='70' r='60' stroke='%23d4af37' stroke-width='3' fill='none'/><text x='70' y='65' fill='%23d4af37' font-family='Arial' font-size='18' font-weight='bold' text-anchor='middle'>JC</text><text x='70' y='85' fill='%2300a8b5' font-family='Arial' font-size='10' font-weight='bold' text-anchor='middle'>CLEANING</text></svg>";
     
     document.getElementById('mainLogo').onerror = function() {
@@ -640,7 +638,6 @@
       modalOverlay.classList.remove('active');
     }
 
-    // Close modal when clicking outside of the card
     modalOverlay.addEventListener('click', function(e) {
       if (e.target === modalOverlay) {
         closeModal();
